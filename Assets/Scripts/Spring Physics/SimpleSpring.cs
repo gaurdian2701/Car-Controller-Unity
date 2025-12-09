@@ -29,7 +29,7 @@ public class SimpleSpring : MonoBehaviour
         mrestorationForce = -mspringConstant * (mattachedObjectRigidbody.position - mrestLengthPosition)
                                    - mattachedObjectRigidbody.linearVelocity * mdampeningValue;
         
-        mattachedObjectRigidbody.AddForceAtPosition(mrestorationForce, transform.position);
+        mattachedObjectRigidbody.AddForce(mrestorationForce);
     }
 
     void OnDrawGizmos()
