@@ -5,21 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="722b81a3-5b5f-44d6-bbd7-64db6a832b0c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/CarMat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CarMat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Car Controller Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Car Controller Unity/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spring Physics/CarSpring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Spring Physics/CarSpring.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DpaMonitoringSettings">
+    <option name="firstShow" value="false" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 7
-}]]></component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5d0a948b6b3e4cc3ab9f63e8521a95022b200/b4/365b6489/Physics.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="36hXslJdRbF97T1RPCfjJzmO5Wk" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -27,6 +34,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -78,13 +86,15 @@
       <option name="useMixedMode" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="10916">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="10916" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list />
+        <list>
+          <MonoRuntime />
+        </list>
       </option>
       <option name="selectedOptions">
         <list />
@@ -104,6 +114,7 @@
       <option name="presentableId" value="Default" />
       <updated>1765459991847</updated>
       <workItem from="1765459995293" duration="7166000" />
+      <workItem from="1765532232830" duration="14970000" />
     </task>
     <servers />
   </component>
@@ -135,6 +146,58 @@
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="3" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Spring Physics/CarSpring.cs</url>
+          <line>58</line>
+          <properties documentPath="C:\Users\Kiran.Gaurdian\Desktop\Personal Projects\Car Controller Unity\Assets\Scripts\Spring Physics\CarSpring.cs" containingFunctionPresentation="Method 'ApplyRestorationForce'">
+            <startOffsets>
+              <option value="2213" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2296" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Spring Physics/CarSpring.cs</url>
+          <line>56</line>
+          <properties documentPath="C:\Users\Kiran.Gaurdian\Desktop\Personal Projects\Car Controller Unity\Assets\Scripts\Spring Physics\CarSpring.cs" containingFunctionPresentation="Method 'ApplyRestorationForce'">
+            <startOffsets>
+              <option value="2102" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2199" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Spring Physics/CarSpring.cs</url>
+          <line>37</line>
+          <properties documentPath="C:\Users\Kiran.Gaurdian\Desktop\Personal Projects\Car Controller Unity\Assets\Scripts\Spring Physics\CarSpring.cs" containingFunctionPresentation="Method 'CalculateRestingPosition'">
+            <startOffsets>
+              <option value="1262" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1304" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Spring Physics/CarSpring.cs</url>
+          <line>43</line>
+          <properties documentPath="C:\Users\Kiran.Gaurdian\Desktop\Personal Projects\Car Controller Unity\Assets\Scripts\Spring Physics\CarSpring.cs" containingFunctionPresentation="Method 'CalculateRestingPosition'">
+            <startOffsets>
+              <option value="1506" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1640" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
