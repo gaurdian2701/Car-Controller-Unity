@@ -1,65 +1,76 @@
+using Unity.Mathematics.Geometry;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-[ExecuteInEditMode]
 public class CarSpring : MonoBehaviour
 {
     [SerializeField] private Rigidbody mparentRigidbody;
-    
-    [SerializeField] private float mspringConstant = 1.0f; 
+
+    #region wheel and spring properties
+
+    [SerializeField] private float mspringConstant = 1.0f;
     [SerializeField] private float mspringRestLength = 1.0f;
     [SerializeField] private float mmaxSpringExtensionLength = 1.0f;
-    [SerializeField] private float mdampeningValue = 1.0f; 
+    [SerializeField] private float mspringDampingConstant = 1.0f;
     [SerializeField] private float mwheelRadius = 1.0f;
-    
-    private Vector3 mtireProbePoint = Vector3.zero;
+
+    private Vector3 mdebugTireProbePoint = Vector3.zero; //Tire probe for debugging purposes only
     private Vector3 mfinalWheelRestingPosition = Vector3.zero;
-    private Vector3 mexpectedWheelRestingPosition = Vector3.zero;
     private RaycastHit springCastHitInfo;
+
+    #endregion
+
+    #region physics and forces variables
+
     private bool mapplyRestorationForce = false;
     private Vector3 mrestorationForce = Vector3.zero;
-    
+    private Vector3 mspringVelocity = Vector3.zero; //This is the difference in LENGTH of the spring in a particular direction
+    private float mcurrentSpringLength = 0.0f;
+    #endregion
+
     void Start()
     {
     }
 
     void FixedUpdate()
     {
-        CalculateRestingPosition();
-        ApplyRestorationForce();
+        CalculateWheelRestingPosition();
+        ApplySpringForcesToParent();
     }
 
-    void CalculateRestingPosition()
+    void CalculateWheelRestingPosition()
     {
         //Using raycasts to determine where to place the wheel
-        if (Physics.Raycast(transform.position,- mparentRigidbody.transform.up, out springCastHitInfo,
+        if (Physics.Raycast(transform.position, -mparentRigidbody.transform.up, out springCastHitInfo,
                 mspringRestLength + mmaxSpringExtensionLength + mwheelRadius))
         {
-            mtireProbePoint = springCastHitInfo.point;
+            //If raycast hits the ground, place the wheel on the ground and apply lifting/spring forces
+            //to the car since the spring "compresses"
+            mdebugTireProbePoint = springCastHitInfo.point;
             mfinalWheelRestingPosition = springCastHitInfo.point + mwheelRadius * mparentRigidbody.transform.up;
-            mapplyRestorationForce = true;
+            mcurrentSpringLength = springCastHitInfo.distance;
         }
         else
         {
-            mtireProbePoint = transform.position - (mspringRestLength + mmaxSpringExtensionLength + mwheelRadius) * mparentRigidbody.transform.up;
-            mfinalWheelRestingPosition = transform.position - (mspringRestLength + mmaxSpringExtensionLength) * mparentRigidbody.transform.up;
-            mapplyRestorationForce = false;
-            mrestorationForce =  Vector3.zero;
+            //Else, simply hang the wheel in the air and don't provide any lifting/spring forces to the car
+            mdebugTireProbePoint = transform.position - (mspringRestLength + mmaxSpringExtensionLength + mwheelRadius)
+                * mparentRigidbody.transform.up;
+            mfinalWheelRestingPosition = transform.position -
+                                         (mspringRestLength + mmaxSpringExtensionLength) *
+                                         mparentRigidbody.transform.up;
+            mcurrentSpringLength = mspringRestLength;
+            mrestorationForce = Vector3.zero;
         }
-
-        mexpectedWheelRestingPosition = transform.position - mparentRigidbody.transform.up * mspringRestLength;
     }
 
-    void ApplyRestorationForce()
+    //NOTE: ISOLATE SPRING LOGIC - IT DOES NOT CARE ABOUT WHEEL POSITIONS AND OUTSIDE FORCES. ONLY IT'S OWN LENGTH
+    void ApplySpringForcesToParent()
     {
-        if (mapplyRestorationForce)
-        {
-            float displacement = Vector3.Distance(mexpectedWheelRestingPosition, mfinalWheelRestingPosition);
-
-            mrestorationForce = mspringConstant * displacement * mparentRigidbody.transform.up;
-            
-            mparentRigidbody.AddForceAtPosition(mrestorationForce, springCastHitInfo.point);
-        }
+        //TODO: Calculate CHANGE in spring's length over time and take that as velocity to multiply with the damping constant
+        float displacement = mspringRestLength - mcurrentSpringLength;
+        mrestorationForce = (mspringConstant * displacement)
+                            * mparentRigidbody.transform.up;
+        mparentRigidbody.AddForceAtPosition(mrestorationForce, transform.position);
     }
 
     void OnDrawGizmos()
@@ -67,17 +78,14 @@ public class CarSpring : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawSphere(transform.position, 0.1f);
 
-        Gizmos.color = Color.aquamarine;
-        Gizmos.DrawSphere(mexpectedWheelRestingPosition, 0.1f);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(mfinalWheelRestingPosition, mwheelRadius);
 
         Gizmos.color = Color.green;
-        Gizmos.DrawLine(transform.position, mtireProbePoint);
+        Gizmos.DrawLine(transform.position, mdebugTireProbePoint);
 
-        Gizmos.color = Color.orange;
-        Gizmos.DrawWireSphere(mfinalWheelRestingPosition, mwheelRadius);
-        
         Gizmos.color = Color.magenta;
-        Gizmos.DrawCube(mtireProbePoint, new Vector3(0.1f, 0.1f, 0.1f));
+        Gizmos.DrawCube(mdebugTireProbePoint, new Vector3(0.1f, 0.1f, 0.1f));
 
         Gizmos.color = Color.blue;
         Gizmos.DrawLine(transform.position, transform.position + mrestorationForce);

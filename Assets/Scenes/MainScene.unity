@@ -145,7 +145,7 @@ Transform:
   m_GameObject: {fileID: 285050814}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.486, y: -0.14999986, z: -0.40899998}
+  m_LocalPosition: {x: -0.486, y: -0.27099967, z: -0.43199995}
   m_LocalScale: {x: 0.70701355, y: 1, z: 0.42023563}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -164,11 +164,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarSpring
   mparentRigidbody: {fileID: 1298710663}
-  mspringConstant: 15
-  mspringRestLength: 0.4
-  mmaxSpringExtensionLength: 0.2
-  mdampeningValue: 1
-  mwheelRadius: 0.2
+  mspringConstant: 17.4
+  mspringRestLength: 0.57
+  mmaxSpringExtensionLength: 0.25
+  mspringDampingConstant: 4.4
+  mwheelRadius: 0.34
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,7 +459,7 @@ Transform:
   m_GameObject: {fileID: 645232887}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.4849999, y: -0.1500001, z: -0.409}
+  m_LocalPosition: {x: 0.4849999, y: -0.2709999, z: -0.432}
   m_LocalScale: {x: 0.7070135, y: 1, z: 0.4202356}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -478,11 +478,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarSpring
   mparentRigidbody: {fileID: 1298710663}
-  mspringConstant: 15
-  mspringRestLength: 0.4
-  mmaxSpringExtensionLength: 0.2
-  mdampeningValue: 1
-  mwheelRadius: 0.2
+  mspringConstant: 17.4
+  mspringRestLength: 0.57
+  mmaxSpringExtensionLength: 0.25
+  mspringDampingConstant: 4.4
+  mwheelRadius: 0.34
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,7 +558,7 @@ Transform:
   m_GameObject: {fileID: 947233419}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.4849999, y: -0.15, z: 0.44399986}
+  m_LocalPosition: {x: 0.4849999, y: -0.271, z: 0.44399986}
   m_LocalScale: {x: 0.7070135, y: 1, z: 0.4202356}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -577,11 +577,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarSpring
   mparentRigidbody: {fileID: 1298710663}
-  mspringConstant: 15
-  mspringRestLength: 0.4
-  mmaxSpringExtensionLength: 0.2
-  mdampeningValue: 1
-  mwheelRadius: 0.2
+  mspringConstant: 17.4
+  mspringRestLength: 0.57
+  mmaxSpringExtensionLength: 0.25
+  mspringDampingConstant: 4.4
+  mwheelRadius: 0.34
 --- !u!1 &1298710658
 GameObject:
   m_ObjectHideFlags: 0
@@ -689,7 +689,7 @@ Transform:
   m_GameObject: {fileID: 1298710658}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.80162, y: 3.078, z: -2.2}
+  m_LocalPosition: {x: 0.80162, y: 16.4, z: -2.2}
   m_LocalScale: {x: 1.4144, y: 1, z: 2.3796172}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -752,7 +752,7 @@ Transform:
   m_GameObject: {fileID: 1388467076}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.48599997, y: -0.1500001, z: 0.44399986}
+  m_LocalPosition: {x: -0.48599997, y: -0.2709999, z: 0.44399986}
   m_LocalScale: {x: 0.7070135, y: 1, z: 0.4202356}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -771,11 +771,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarSpring
   mparentRigidbody: {fileID: 1298710663}
-  mspringConstant: 15
-  mspringRestLength: 0.4
-  mmaxSpringExtensionLength: 0.2
-  mdampeningValue: 1
-  mwheelRadius: 0.2
+  mspringConstant: 17.4
+  mspringRestLength: 0.57
+  mmaxSpringExtensionLength: 0.25
+  mspringDampingConstant: 4.4
+  mwheelRadius: 0.34
 --- !u!1 &1590877303
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,8 +883,8 @@ Transform:
   m_GameObject: {fileID: 1590877303}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.09442, y: 0.541, z: -2.3299}
-  m_LocalScale: {x: 10.114, y: 1, z: 7.8517}
+  m_LocalPosition: {x: 0.094417, y: 0.541, z: -2.3299}
+  m_LocalScale: {x: 30.246931, y: 1, z: 46.17506}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
