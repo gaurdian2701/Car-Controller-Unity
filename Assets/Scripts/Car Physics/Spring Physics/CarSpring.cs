@@ -2,7 +2,9 @@ using Unity.Mathematics.Geometry;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class CarSpring : MonoBehaviour
+namespace Car
+{
+    public class CarSpring : MonoBehaviour
 {
     [SerializeField] private Rigidbody mparentRigidbody;
 
@@ -21,15 +23,17 @@ public class CarSpring : MonoBehaviour
     #endregion
 
     #region physics and forces variables
-
     private bool mapplyRestorationForce = false;
     private Vector3 mrestorationForce = Vector3.zero;
-    private Vector3 mspringVelocity = Vector3.zero; //This is the difference in LENGTH of the spring in a particular direction
     private float mcurrentSpringLength = 0.0f;
+    private float moldSpringLength = 0.0f;
+    private float springVelocity = 0.0f;
     #endregion
 
     void Start()
     {
+        mcurrentSpringLength = mspringRestLength;
+        moldSpringLength = mcurrentSpringLength;
     }
 
     void FixedUpdate()
@@ -52,23 +56,25 @@ public class CarSpring : MonoBehaviour
         }
         else
         {
-            //Else, simply hang the wheel in the air and don't provide any lifting/spring forces to the car
+            //Else, simply hang the spring in the air at rest length
             mdebugTireProbePoint = transform.position - (mspringRestLength + mmaxSpringExtensionLength + mwheelRadius)
                 * mparentRigidbody.transform.up;
             mfinalWheelRestingPosition = transform.position -
                                          (mspringRestLength + mmaxSpringExtensionLength) *
                                          mparentRigidbody.transform.up;
-            mcurrentSpringLength = mspringRestLength;
-            mrestorationForce = Vector3.zero;
+            mcurrentSpringLength = mspringRestLength + mmaxSpringExtensionLength;
         }
+
+        springVelocity = mcurrentSpringLength - moldSpringLength;
+        moldSpringLength = mcurrentSpringLength;
     }
 
     //NOTE: ISOLATE SPRING LOGIC - IT DOES NOT CARE ABOUT WHEEL POSITIONS AND OUTSIDE FORCES. ONLY IT'S OWN LENGTH
     void ApplySpringForcesToParent()
     {
-        //TODO: Calculate CHANGE in spring's length over time and take that as velocity to multiply with the damping constant
+        //Calculate CHANGE in spring's length over time and take that as velocity to multiply with the damping constant
         float displacement = mspringRestLength - mcurrentSpringLength;
-        mrestorationForce = (mspringConstant * displacement)
+        mrestorationForce = (mspringConstant * displacement - springVelocity * mspringDampingConstant)
                             * mparentRigidbody.transform.up;
         mparentRigidbody.AddForceAtPosition(mrestorationForce, transform.position);
     }
@@ -90,4 +96,5 @@ public class CarSpring : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawLine(transform.position, transform.position + mrestorationForce);
     }
+}
 }
