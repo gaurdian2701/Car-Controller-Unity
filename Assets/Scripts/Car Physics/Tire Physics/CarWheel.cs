@@ -17,7 +17,6 @@ namespace Car
         [Header("Spring Properties")]
         [SerializeField] private float mspringConstant = 1.0f;
         [SerializeField] private float mspringRestLength = 1.0f;
-        [SerializeField] private float mmaxSpringExtensionLength = 1.0f;
         [SerializeField] private float mspringDampingConstant = 1.0f;
         [SerializeField] private float mwheelRadius = 1.0f;
 
@@ -60,13 +59,14 @@ namespace Car
         {
             CalculateWheelRestingPosition();
             mwheelMesh.transform.position = mfinalWheelRestingPosition;
+            CalculateRestorationForce();
         }
 
-        void CalculateWheelRestingPosition()
+        private void CalculateWheelRestingPosition()
         {
             //Using raycasts to determine where to place the wheel
             if (Physics.Raycast(mspring.transform.position, -mparentRigidbody.transform.up, out springCastHitInfo,
-                    mspringRestLength + mmaxSpringExtensionLength + mwheelRadius))
+                    mspringRestLength + mwheelRadius))
             {
                 //If raycast hits the ground, place the wheel on the ground and apply lifting/spring forces
                 //to the car since the spring "compresses"
@@ -78,23 +78,27 @@ namespace Car
             {
                 //Else, simply hang the spring in the air at rest length
                 mdebugTireProbePoint = mspring.transform.position -
-                                       (mspringRestLength + mmaxSpringExtensionLength + mwheelRadius)
+                                       (mspringRestLength + mwheelRadius)
                                        * mparentRigidbody.transform.up;
                 mfinalWheelRestingPosition = mwheelMesh.transform.position;
-                mcurrentSpringLength = mspringRestLength + mmaxSpringExtensionLength;
+                mcurrentSpringLength = mspringRestLength;
             }
-
-            springVelocity = mcurrentSpringLength - moldSpringLength;
-            moldSpringLength = mcurrentSpringLength;
         }
 
         //NOTE: ISOLATE SPRING LOGIC - IT DOES NOT CARE ABOUT WHEEL POSITIONS AND OUTSIDE FORCES. ONLY IT'S OWN LENGTH
-        void ApplySpringForcesToParent()
+        private void CalculateRestorationForce()
         {
+            springVelocity = mcurrentSpringLength - moldSpringLength;
+            moldSpringLength = mcurrentSpringLength;
+            
             //Calculate CHANGE in spring's length over time and take that as velocity to multiply with the damping constant
             float displacement = mspringRestLength - mcurrentSpringLength;
             mrestorationForce = (mspringConstant * displacement - springVelocity * mspringDampingConstant)
                                 * mparentRigidbody.transform.up;
+        }
+
+        private void ApplySpringForcesToParent()
+        {
             mparentRigidbody.AddForceAtPosition(mrestorationForce, mspring.transform.position);
         }
         

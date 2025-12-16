@@ -391,6 +391,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2065068707920822018, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
+      propertyPath: mspringConstant
+      value: 10.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2065068707920822018, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
+      propertyPath: mspringRestLength
+      value: 0.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 2065068707920822018, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
+      propertyPath: mspringDampingConstant
+      value: 8.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 2065068707920822018, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
+      propertyPath: mmaxSpringExtensionLength
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4079921147483252166, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
       propertyPath: m_Name
       value: Car
@@ -401,7 +417,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4906636065763580236, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.62
+      value: 1.54
       objectReference: {fileID: 0}
     - target: {fileID: 4906636065763580236, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -435,45 +451,57 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5401332951916281952, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
+      propertyPath: mspringConstant
+      value: 10.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5401332951916281952, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
+      propertyPath: mspringRestLength
+      value: 0.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 5401332951916281952, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
+      propertyPath: mspringDampingConstant
+      value: 8.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 5401332951916281952, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
+      propertyPath: mmaxSpringExtensionLength
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5816892638923163788, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
       propertyPath: mspringConstant
-      value: 12
+      value: 10.7
       objectReference: {fileID: 0}
     - target: {fileID: 5816892638923163788, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
       propertyPath: mspringRestLength
-      value: 1.1
+      value: 0.96
       objectReference: {fileID: 0}
-    - target: {fileID: 6341542688146276920, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
+    - target: {fileID: 5816892638923163788, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
+      propertyPath: mspringDampingConstant
+      value: 8.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 5816892638923163788, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
+      propertyPath: mmaxSpringExtensionLength
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6003469111123133633, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
       propertyPath: mspringConstant
-      value: 12
+      value: 10.7
       objectReference: {fileID: 0}
-    - target: {fileID: 6341542688146276920, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
+    - target: {fileID: 6003469111123133633, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
+      propertyPath: mshowSpringDebug
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6003469111123133633, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
       propertyPath: mspringRestLength
-      value: 1.1
+      value: 0.96
       objectReference: {fileID: 0}
-    - target: {fileID: 7474361521630625330, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
-      propertyPath: mspringConstant
-      value: 12
+    - target: {fileID: 6003469111123133633, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
+      propertyPath: mspringDampingConstant
+      value: 8.36
       objectReference: {fileID: 0}
-    - target: {fileID: 7474361521630625330, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
-      propertyPath: mspringRestLength
-      value: 1.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9071115975560643289, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
-      propertyPath: mspringConstant
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 9071115975560643289, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
-      propertyPath: mspringRestLength
-      value: 1.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9130176031888671345, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
-      propertyPath: m_Size.z
-      value: 3.32
-      objectReference: {fileID: 0}
-    - target: {fileID: 9130176031888671345, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
-      propertyPath: m_Center.z
-      value: -0.12
+    - target: {fileID: 6003469111123133633, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
+      propertyPath: mmaxSpringExtensionLength
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
