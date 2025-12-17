@@ -38,8 +38,6 @@ namespace Car
         #region wheel properties
         
         [Header("Wheel Properties")]
-        public bool misTurningWheel = false;
-        public bool misRearWheel = false;
         public bool misLeftWheel = false;
         
         #endregion
