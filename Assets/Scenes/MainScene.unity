@@ -393,15 +393,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2065068707920822018, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
       propertyPath: mspringConstant
-      value: 10.7
+      value: 7.6
       objectReference: {fileID: 0}
     - target: {fileID: 2065068707920822018, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
       propertyPath: mspringRestLength
-      value: 0.96
+      value: 1.05
       objectReference: {fileID: 0}
     - target: {fileID: 2065068707920822018, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
       propertyPath: mspringDampingConstant
-      value: 8.36
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2065068707920822018, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
       propertyPath: mmaxSpringExtensionLength
@@ -453,15 +453,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5401332951916281952, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
       propertyPath: mspringConstant
-      value: 10.7
+      value: 7.6
       objectReference: {fileID: 0}
     - target: {fileID: 5401332951916281952, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
       propertyPath: mspringRestLength
-      value: 0.96
+      value: 1.05
       objectReference: {fileID: 0}
     - target: {fileID: 5401332951916281952, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
       propertyPath: mspringDampingConstant
-      value: 8.36
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5401332951916281952, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
       propertyPath: mmaxSpringExtensionLength
@@ -469,15 +469,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5816892638923163788, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
       propertyPath: mspringConstant
-      value: 10.7
+      value: 7.6
       objectReference: {fileID: 0}
     - target: {fileID: 5816892638923163788, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
       propertyPath: mspringRestLength
-      value: 0.96
+      value: 1.05
       objectReference: {fileID: 0}
     - target: {fileID: 5816892638923163788, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
       propertyPath: mspringDampingConstant
-      value: 8.36
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5816892638923163788, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
       propertyPath: mmaxSpringExtensionLength
@@ -485,7 +485,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6003469111123133633, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
       propertyPath: mspringConstant
-      value: 10.7
+      value: 7.6
       objectReference: {fileID: 0}
     - target: {fileID: 6003469111123133633, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
       propertyPath: mshowSpringDebug
@@ -493,11 +493,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6003469111123133633, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
       propertyPath: mspringRestLength
-      value: 0.96
+      value: 1.05
       objectReference: {fileID: 0}
     - target: {fileID: 6003469111123133633, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
       propertyPath: mspringDampingConstant
-      value: 8.36
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6003469111123133633, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
       propertyPath: mmaxSpringExtensionLength
